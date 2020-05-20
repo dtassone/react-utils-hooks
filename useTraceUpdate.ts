@@ -6,7 +6,7 @@ function useTraceUpdate(props: any): void {
   useEffect(() => {
     const changedProps = Object.entries(props).reduce((ps, [k, v]) => {
       if (prev.current[k] !== v) {
-        // @ts-ignore
+        // eslint-disable-next-line
         ps[k] = [prev.current[k], v];
       }
       return ps;
