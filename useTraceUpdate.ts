@@ -1,7 +1,10 @@
-/*
+import { RefObject, useRef, useEffect } from 'react';
+
+/**
  *  Trace which props changed and caused the rerender
  */
-function useTraceUpdate(props: any): void {
+
+export function useTraceUpdate(props: any): void {
   const prev = useRef(props);
   useEffect(() => {
     const changedProps = Object.entries(props).reduce((ps, [k, v]) => {
